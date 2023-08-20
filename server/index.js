@@ -9,6 +9,11 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 // db
+mongoose.set('strictQuery', true);
+
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => console.log("MongoDB Connected"))
+    .catch((err) => console.log("DB CONNECTION ERROR", err));
 
 // middleware
 const app = express();
