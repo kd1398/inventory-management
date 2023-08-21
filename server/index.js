@@ -5,17 +5,18 @@ import morgan from 'morgan';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
+import { MongoClient, ServerApiVersion } from 'mongodb';
+
+// const uri = `mongodb+srv://user1000:test123@cluster0.qdpbtz9.mongodb.net/?retryWrites=true&w=majority` || `mongodb://127.0.0.1:27017`;
+const uri = `mongodb://0.0.0.0:27017`;
 
 // app
 dotenv.config();
 
 // db
-// mongoose.set('strictQuery', true);
+mongoose.set('strictQuery', true);
 
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true })
     .then(() => console.log("MongoDB Connected"))
     .catch((err) => console.log("DB CONNECTION ERROR", err));
 
