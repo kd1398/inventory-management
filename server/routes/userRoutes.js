@@ -1,7 +1,7 @@
-import express from 'express';
-import * as dotenv from 'dotenv';
+import express from "express";
+import * as dotenv from "dotenv";
 
-import { signUp, login } from '../controllers/userController.js'
+import { signUp, login } from "../controllers/userController.js";
 
 dotenv.config();
 
