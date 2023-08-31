@@ -8,7 +8,7 @@ export function authenticateToken(req, res, next) {
     return res.status(403).json({ message: "Access Denied", success: false });
 
   const jwtSecretKey = process.env.JWTKEY.toString();
-  jsonwebtoken.verify(token, jwtSecretKey, (err: any, user: any) => {
+  jsonwebtoken.verify(token, jwtSecretKey, (err, user) => {
     console.log(err);
 
     if (err) return res.sendStatus(403);

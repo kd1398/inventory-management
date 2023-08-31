@@ -29,7 +29,7 @@ app.use(express.json());
 
 // routes
 app.use("/api/user", userRoutes);
-app.use("/test/jwt", authenticateToken, testRoutes);
+// app.use("/test/jwt", authenticateToken, testRoutes);
 
 // port
 const port = process.env.PORT || 8080;
